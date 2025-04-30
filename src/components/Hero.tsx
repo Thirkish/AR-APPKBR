@@ -3,7 +3,6 @@ import { Download } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import myImage from '../Images/img.jpg';
 
-
 const APK_URL = 'https://github.com/Abishekraja28/MTCXR/releases/download/App/MTCXR.apk';
 
 const Hero: React.FC = () => {
@@ -72,12 +71,15 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+              {/* Updated Download Button */}
               <a 
                 href={APK_URL}
-                className="group bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-purple-500/25 flex items-center"
+                className="group relative bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-purple-500/25 flex items-center"
               >
-                <Download size={24} className="mr-3" />
-                <div className="text-left">
+                {/* Background trigger */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl opacity-80"></div>
+
+                <div className="relative z-10 text-left">
                   <div className="text-sm opacity-90">Android APK</div>
                   <div className="font-semibold">Download Now</div>
                 </div>
@@ -133,3 +135,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+  
